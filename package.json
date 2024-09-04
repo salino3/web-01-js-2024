@@ -1,0 +1,12 @@
+{
+  "name": "web-01-js-2024",
+  "version": "1.0.0",
+  "description": "Simple web project with lite-server",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
