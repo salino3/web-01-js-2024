@@ -10,16 +10,34 @@ function loadHeader() {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("header-container").innerHTML = data;
+      let isHomePage = document.getElementsByClassName("home-page").length > 0;
+      let isAboutPage =
+        document.getElementsByClassName("about-page").length > 0;
+      let isContactPage =
+        document.getElementsByClassName("contact-page").length > 0;
 
-      document.querySelectorAll("a").forEach((anchor) => {
-        document.getElementById("home-link").textContent = "Home";
-        document.getElementById("home-link").href = "/index.html";
+      document.querySelectorAll("a").forEach(() => {
+        if (!isHomePage) {
+          document.getElementById("home-link").textContent = "Home";
+          document.getElementById("home-link").href = "/index.html";
+        } else {
+          document.getElementById("li-home").remove();
+        }
 
-        document.getElementById("about-link").textContent = "About";
-        document.getElementById("about-link").href = "/src/html/about.html";
+        if (!isAboutPage) {
+          document.getElementById("about-link").textContent = "About";
+          document.getElementById("about-link").href = "/src/html/about.html";
+        } else {
+          document.getElementById("li-about").remove();
+        }
 
-        document.getElementById("contact-link").textContent = "Contact";
-        document.getElementById("contact-link").href = "/src/html/contact.html";
+        if (!isContactPage) {
+          document.getElementById("contact-link").textContent = "Contact";
+          document.getElementById("contact-link").href =
+            "/src/html/contact.html";
+        } else {
+          document.getElementById("li-contact").remove();
+        }
       });
     })
     .catch((error) => console.error("Error cargando el encabezado:", error));
