@@ -1,10 +1,11 @@
 {
-  "name": "web-01-js-2024",
+  "name": "https://salino3.github.io/web-01-js-2024",
   "version": "1.0.0",
   "description": "Simple web project with lite-server",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server"
+    "start": "lite-server",
+    "deploy": "gh-pages -d ."
   },
   "devDependencies": {
     "lite-server": "^2.6.1"
