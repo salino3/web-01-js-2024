@@ -6,7 +6,7 @@ if (clickMeButton) {
 }
 
 function loadHeader() {
-  fetch("/src/components/header/header.component.html")
+  fetch("/src/components/header.component.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("header-container").innerHTML = data;

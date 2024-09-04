@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li id="li-home">
+            <a id="home-link"></a>
+          </li>
+          <li id="li-about">
+            <a id="about-link"></a>
+          </li>
+          <li id="li-contact">
+            <a id="contact-link"></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <style>
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: solid;
+      }
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 200px;
+        width: 70vw;
+        max-width: 500px;
+      }
+    </style>
+  </body>
+</html>
