@@ -40,7 +40,23 @@ function loadHeader() {
         }
       });
     })
-    .catch((error) => console.error("Error cargando el encabezado:", error));
+    .catch((error) => console.error("Error downloading header:", error));
+}
+
+function loadTitle(h1Text, h2Text) {
+  fetch("/src/components/title.component.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("main_page").innerHTML = data;
+
+      document.getElementById("h1_title").textContent = h1Text;
+      document.getElementById("h2_title").textContent = h2Text;
+
+      document.getElementById("h1_title").style.color = "purple";
+    })
+    .catch((error) => console.error("Error downloading title:", error));
 }
 
 loadHeader();
+
+loadTitle("Home Page!", "H2 of Home page");
