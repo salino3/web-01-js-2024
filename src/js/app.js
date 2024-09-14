@@ -10,35 +10,46 @@ function loadHeader() {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("header-container").innerHTML = data;
+
       let isHomePage = document.getElementsByClassName("home-page").length > 0;
       let isAboutPage =
         document.getElementsByClassName("about-page").length > 0;
       let isContactPage =
         document.getElementsByClassName("contact-page").length > 0;
 
-      document.querySelectorAll("a").forEach(() => {
+      const homeLink = document.getElementById("home-link");
+      const aboutLink = document.getElementById("about-link");
+      const contactLink = document.getElementById("contact-link");
+
+      if (homeLink) {
         if (!isHomePage) {
-          document.getElementById("home-link").textContent = "Home";
-          document.getElementById("home-link").href = "/index.html";
+          homeLink.textContent = "Home";
+          homeLink.href = "/index.html";
         } else {
-          document.getElementById("li-home").remove();
+          const liHome = document.getElementById("li-home");
+          if (liHome) liHome.remove();
         }
+      }
 
+      if (aboutLink) {
         if (!isAboutPage) {
-          document.getElementById("about-link").textContent = "About";
-          document.getElementById("about-link").href = "/src/html/about.html";
+          aboutLink.textContent = "About";
+          aboutLink.href = "/src/html/about.html";
         } else {
-          document.getElementById("li-about").remove();
+          const liAbout = document.getElementById("li-about");
+          if (liAbout) liAbout.remove();
         }
+      }
 
+      if (contactLink) {
         if (!isContactPage) {
-          document.getElementById("contact-link").textContent = "Contact";
-          document.getElementById("contact-link").href =
-            "/src/html/contact.html";
+          contactLink.textContent = "Contact";
+          contactLink.href = "/src/html/contact.html";
         } else {
-          document.getElementById("li-contact").remove();
+          const liContact = document.getElementById("li-contact");
+          if (liContact) liContact.remove();
         }
-      });
+      }
     })
     .catch((error) => console.error("Error downloading header:", error));
 }
