@@ -46,3 +46,15 @@ if (isDevelopmentPerson) {
   console.log(person2.alive);
   console.log(person3.alive);
 }
+
+// function addH3(h3Text) {
+//   const h3Element = document.getElementById("h3About");
+//   if (h3Element) {
+//     // Check if the element exists
+//     h3Element.textContent = h3Text;
+//   } else {
+//     console.error('Element with id "h3About" not found.');
+//   }
+// }
+
+// addH3("h3About");
