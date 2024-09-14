@@ -27,12 +27,17 @@ class Animal {
   }
 }
 
-const animal1 = new Animal("Cat", "Miau");
-const animal2 = new Animal("Elephant", "Trumpet");
-const animal3 = new Animal("Giraffe", "Grunt");
+const isDevelopmentAnimal =
+  document.getElementsByClassName("home-page").length > 0;
 
-console.log(animal1.showInfo());
-console.log(animal2.showInfo());
-console.log(animal3.showInfo());
+if (isDevelopmentAnimal) {
+  const animal1 = new Animal("Cat", "Miau");
+  const animal2 = new Animal("Elephant", "Trumpet");
+  const animal3 = new Animal("Giraffe", "Grunt");
 
-console.log(animal1.getStatus());
+  console.log(animal1.showInfo());
+  console.log(animal2.showInfo());
+  console.log(animal3.showInfo());
+
+  console.log(animal1.getStatus());
+}

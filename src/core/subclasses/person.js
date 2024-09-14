@@ -36,7 +36,13 @@ const person3 = new Person(
   76
 );
 
-console.log(person1.showInfo());
-console.log(person1.energy);
-console.log(person2.alive);
-console.log(person3.alive);
+const isDevelopmentPerson =
+  document.getElementsByClassName("home-page").length > 0 ||
+  document.getElementsByClassName("contact-page").length > 0;
+
+if (isDevelopmentPerson) {
+  console.log(person1.showInfo());
+  console.log(person1.energy);
+  console.log(person2.alive);
+  console.log(person3.alive);
+}
